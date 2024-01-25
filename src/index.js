@@ -1,5 +1,3 @@
-// Please tidy this file up until line 43 where it says "⛔ STOP"
-
 /* 						👀 Expected output:
 
 							Bart
@@ -8,37 +6,27 @@
 							Result: ✅ SUCCESS
 */
 
-// Declare variables
-var x = { name: 'Bart', age: 12 };
-var y = { name: 'Lisa', age: 10 };
+const simpsons = [{ name: 'Bart', age: 12 }, { name: 'Lisa', age: 10 }, { name: 'Maggie', age: 1 }];
 
-// put into array
-var a = [x, y, { name: 'Maggie', age: 1 }];
-
-// create the function
-function p(p) {
-	console.log(p.name);
+function outputName(simpson) {
+	console.log(simpson.name);
 }
 
-// show all the names first
-p(x);
-p(y);
-p(a[2]);
+simpsons.forEach((simpson) =>{
+	outputName(simpson)
+})
 
 var result = 0;
 
-function cmpInpt(p) {
-	// check the input matches
-	if (p.age == getInputAge(p)) {
-		// add to result
-		result += 1; // increment for each correctly input age
+function computeInput(input) {
+	if (input.age === getInputAge(input)) {
+		result += 1; 
 	}
 }
 
-// check all the inputs match
-cmpInpt(x);
-cmpInpt(y);
-cmpInpt(a[2]);
+simpsons.forEach((simpson) => {
+	computeInput(simpson)
+})
 
 // ⛔🚫 STOP TIDYING! You're done ✅
 
